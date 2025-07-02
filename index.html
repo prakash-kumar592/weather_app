@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-spinner"></div>
+        <p>Loading weather data...</p>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container" id="mainContainer">
+        <!-- Header -->
+        <header class="header">
+            <h1><i class="fas fa-cloud-sun"></i> Weather App</h1>
+            <div class="header-controls">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="unit-toggle" id="unitToggle">°F</button>
+            </div>
+        </header>
+
+        <!-- Search Section -->
+        <div class="search-section">
+            <div class="search-container">
+                <input type="text" id="cityInput" placeholder="Enter city name..." class="search-input">
+                <button id="searchBtn" class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <button id="locationBtn" class="location-btn" title="Use current location">
+                <i class="fas fa-location-dot"></i>
+            </button>
+        </div>
+
+        <!-- Recent Cities -->
+        <div class="recent-cities" id="recentCities">
+            <h3>Recent Searches</h3>
+            <div class="recent-list" id="recentList"></div>
+        </div>
+
+        <!-- Error Message -->
+        <div class="error-message" id="errorMessage">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span id="errorText"></span>
+        </div>
+
+        <!-- Current Weather -->
+        <div class="current-weather" id="currentWeather">
+            <div class="weather-card">
+                <div class="weather-header">
+                    <div class="location-info">
+                        <h2 id="cityName">New York</h2>
+                        <p id="countryName">United States</p>
+                        <p id="currentDate"></p>
+                    </div>
+                    <div class="weather-icon">
+                        <img id="weatherIcon" src="" alt="Weather Icon">
+                    </div>
+                </div>
+                
+                <div class="temperature-display">
+                    <span id="temperature">22°</span>
+                    <div class="temp-details">
+                        <p id="weatherDescription">Partly Cloudy</p>
+                        <div class="temp-range">
+                            <span id="maxTemp">25°</span> / <span id="minTemp">18°</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <i class="fas fa-eye"></i>
+                        <span>Visibility</span>
+                        <span id="visibility">10 km</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-tint"></i>
+                        <span>Humidity</span>
+                        <span id="humidity">65%</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-wind"></i>
+                        <span>Wind Speed</span>
+                        <span id="windSpeed">15 km/h</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-thermometer-half"></i>
+                        <span>Feels Like</span>
+                        <span id="feelsLike">25°</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-compress-arrows-alt"></i>
+                        <span>Pressure</span>
+                        <span id="pressure">1013 hPa</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-sun"></i>
+                        <span>UV Index</span>
+                        <span id="uvIndex">5</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hourly Forecast -->
+        <div class="forecast-section">
+            <h3><i class="fas fa-clock"></i> 24-Hour Forecast</h3>
+            <div class="hourly-forecast" id="hourlyForecast">
+                <!-- Hourly items will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- 5-Day Forecast -->
+        <div class="forecast-section">
+            <h3><i class="fas fa-calendar-week"></i> 5-Day Forecast</h3>
+            <div class="daily-forecast" id="dailyForecast">
+                <!-- Daily items will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Weather Alerts -->
+        <div class="weather-alerts" id="weatherAlerts">
+            <h3><i class="fas fa-exclamation-triangle"></i> Weather Alerts</h3>
+            <div class="alerts-list" id="alertsList"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
